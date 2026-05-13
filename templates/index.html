@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>COVID-19 Dataset Viewer</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>COVID-19 dataset viewer</h1>
+        <p class="subtle">
+          Put CSV files in <code>dataset/data/</code>, then select one to preview as JSON.
+        </p>
+      </header>
+
+      <section class="card">
+        <div class="row">
+          <label for="fileSelect">CSV file</label>
+          <select id="fileSelect"></select>
+          <button id="refreshBtn" type="button">Refresh</button>
+        </div>
+        <div class="row">
+          <label for="limitInput">Row limit</label>
+          <input id="limitInput" type="number" min="1" max="50000" value="5000" />
+          <button id="loadBtn" type="button">Load</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="row row-between">
+          <h2>Preview</h2>
+          <div id="meta" class="subtle"></div>
+        </div>
+        <pre id="output" class="code"></pre>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
