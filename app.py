@@ -1,3 +1,4 @@
+from flask import Flask, abort, jsonify, render_template, request
 from __future__ import annotations
 
 import csv
@@ -5,7 +6,7 @@ import os
 from pathlib import Path
 from typing import Any
 
-from flask import Flask, abort, jsonify, render_template, request
+
 
 
 APP_DIR = Path(__file__).resolve().parent
