@@ -1,4 +1,3 @@
-from flask import Flask, abort, jsonify, render_template, request
 from __future__ import annotations
 
 import csv
@@ -6,6 +5,7 @@ import os
 from pathlib import Path
 from typing import Any
 
+from flask import Flask, abort, jsonify, render_template, request
 
 
 
@@ -70,7 +70,10 @@ def create_app() -> Flask:
     return app
 
 
+# Expose a top-level Flask instance for WSGI servers and `flask run`-style discovery.
+app = create_app()
+
+
 if __name__ == "__main__":
-    app = create_app()
     port = int(os.environ.get("PORT", "5000"))
     app.run(host="0.0.0.0", port=port, debug=True)
